@@ -1,5 +1,5 @@
 """
-ASGI config for planting_grass project.
+ASGI config for egg project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
