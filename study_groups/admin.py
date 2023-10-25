@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Problem
+from .models import StudyGroup
 
 
 # Register your models here.
-admin.site.register(Problem)
+admin.site.register(StudyGroup)

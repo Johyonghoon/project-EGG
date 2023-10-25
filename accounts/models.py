@@ -6,4 +6,4 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     name = models.CharField(max_length=10)
     boj_id = models.CharField(max_length=20)
-    streak = models.IntegerField()
+    streak = models.IntegerField(default=0)

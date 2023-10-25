@@ -32,8 +32,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'accounts',
-    'groups',
     'problems',
+    'goals',
+    'study_groups',
+    'roles',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
