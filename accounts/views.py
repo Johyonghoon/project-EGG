@@ -2,9 +2,12 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
-from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth import update_session_auth_hash, get_user_model
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from .forms import CustomUserCreationForm, CustomUserChangeForm
+from .serializer import CustomUserSerializer
+from .models import User
 
 
 def login(request):
@@ -82,3 +85,11 @@ def change_password(request, user_pk):
         'form': form,
     }
     return render(request, 'accounts/change_password.html', context)
+
+
+def user_list(request):
+    users = get_user_model().objects.all().values()
+    print(users[0])
+    # serializer = CustomUserSerializer(list(users), many=True)
+    # print(">>>>>>>>>>>", serializer.data)
+    return JsonResponse(users[0])

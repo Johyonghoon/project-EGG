@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'goals',
     'study_groups',
     'roles',
+    'rest_framework',
+    'corsheaders',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -129,3 +132,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.User'
+
+CORS_ALLOWED_ORIGINS = [
+    "https://www.acmicpc.net"
+    # 다른 허용할 origin들...
+]

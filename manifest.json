@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "BOJ-EGG",
+  "description": "BOJ 플랫폼 그룹 기능을 확장합니다.",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "js": ["scripts/ul.js"],
+      "matches": [
+        "https://www.acmicpc.net/group/*",
+        "https://www.acmicpc.net/status?group_id=*"
+      ],
+      "exclude_matches": [
+        "https://www.acmicpc.net/group/list/*",
+        "https://www.acmicpc.net/group/create"
+      ]
+    },
+    {
+      "js": ["scripts/group_main.js"],
+      "matches": [
+        "https://www.acmicpc.net/group/*/"
+      ]
+    },
+    {
+      "js":["scripts/rank.js"],
+      "matches": ["https://www.acmicpc.net/group/ranklist/*"]
+    }
+  ],
+  "host_permissions": [
+    "https://www.acmicpc.net/*"
+  ]
+}
