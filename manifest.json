@@ -5,7 +5,7 @@
   "version": "1.0",
   "content_scripts": [
     {
-      "js": ["scripts/ul.js"],
+      "js": ["scripts/group_nav.js"],
       "matches": [
         "https://www.acmicpc.net/group/*",
         "https://www.acmicpc.net/status?group_id=*"
@@ -24,6 +24,10 @@
     {
       "js":["scripts/rank.js"],
       "matches": ["https://www.acmicpc.net/group/ranklist/*"]
+    },
+    {
+      "js":["scripts/sprint_list.js"],
+      "matches": ["https://www.acmicpc.net/group/sprint/*"]
     }
   ],
   "host_permissions": [
