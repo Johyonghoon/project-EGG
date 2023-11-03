@@ -3,6 +3,9 @@
   "name": "BOJ-EGG",
   "description": "BOJ 플랫폼 그룹 기능을 확장합니다.",
   "version": "1.0",
+  "background": {
+    "service_worker": "scripts/service_worker.js"
+    },
   "content_scripts": [
     {
       "js": ["scripts/group_nav.js"],
@@ -18,7 +21,7 @@
     {
       "js": ["scripts/group_main.js"],
       "matches": [
-        "https://www.acmicpc.net/group/*/"
+        "https://www.acmicpc.net/group/*"
       ]
     },
     {
