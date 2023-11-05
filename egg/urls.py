@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('<int:user_pk>/password/', views.change_password, name='change_password'),
-    path('goals/', include('goals.urls')),
+    path('sprints/', include('sprints.urls')),
     path('groups/', include('study_groups.urls')),
     path('problems/', include('problems.urls')),
     path('roles/', include('roles.urls')),

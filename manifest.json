@@ -29,8 +29,12 @@
       "matches": ["https://www.acmicpc.net/group/ranklist/*"]
     },
     {
-      "js":["scripts/sprint_list.js"],
+      "js":["scripts/sprint_info.js"],
       "matches": ["https://www.acmicpc.net/group/sprint/*"]
+    },
+    {
+      "js":["scripts/group_practice.js"],
+      "matches": ["https://www.acmicpc.net/group/practice/view/*"]
     }
   ],
   "host_permissions": [
