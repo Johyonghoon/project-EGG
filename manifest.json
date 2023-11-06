@@ -25,12 +25,16 @@
       ]
     },
     {
-      "js":["scripts/rank.js"],
+      "js": ["scripts/rank.js"],
       "matches": ["https://www.acmicpc.net/group/ranklist/*"]
     },
     {
       "js":["scripts/sprint_info.js"],
       "matches": ["https://www.acmicpc.net/group/sprint/*"]
+    },
+    {
+      "js": ["scripts/sprint_create.js"],
+      "matches": ["https://www.acmicpc.net/group/create/sprint/*"]
     },
     {
       "js":["scripts/group_practice.js"],
