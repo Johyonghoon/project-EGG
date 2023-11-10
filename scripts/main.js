@@ -1,0 +1,5 @@
+new Promise(() => {groupInfo()})
+  .then(groupInfo())
+  .then(groupNav())
+  .then(sprintCreate())
+  .catch()

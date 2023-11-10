@@ -5,7 +5,6 @@
   "version": "1.0",
   "content_scripts": [
     {
-      "js": ["scripts/utils/group_nav.js"],
       "matches": [
         "https://www.acmicpc.net/group/*",
         "https://www.acmicpc.net/status?group_id=*"
@@ -13,29 +12,37 @@
       "exclude_matches": [
         "https://www.acmicpc.net/group/list/*",
         "https://www.acmicpc.net/group/create"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "js": [
+        "scripts/utils/group_info.js",
+        "scripts/utils/group_nav.js"
       ]
     },
     {
-      "js": ["scripts/group_main.js"],
+      "matches": ["https://www.acmicpc.net/group/sprint/*"],
+      "js":["scripts/features/sprint.js"]
+    },
+    {
       "matches": [
-        "https://www.acmicpc.net/group/*"
+        "https://www.acmicpc.net/group/*",
+        "https://www.acmicpc.net/status?group_id=*"
+      ],
+      "exclude_matches": [
+        "https://www.acmicpc.net/group/list/*",
+        "https://www.acmicpc.net/group/create"
+      ],
+      "all_frames": true,
+      "js": [
+        "scripts/main.js"
       ]
+
     },
     {
-      "js": ["scripts/rank.js"],
-      "matches": ["https://www.acmicpc.net/group/ranklist/*"]
-    },
-    {
-      "js":["scripts/features/sprint.js"],
-      "matches": ["https://www.acmicpc.net/group/sprint/*"]
-    },
-    {
-      "js": ["scripts/features/sprint_create.js"],
-      "matches": ["https://www.acmicpc.net/group/create/sprint/*"]
-    },
-    {
-      "js":["scripts/group_practice.js"],
-      "matches": ["https://www.acmicpc.net/group/practice/view/*"]
+      "matches": ["https://www.acmicpc.net/group/create/sprint/*"],
+      "run_at": "document_end",
+      "js": ["scripts/features/sprint_create.js"]
     }
   ],
   "host_permissions": [
